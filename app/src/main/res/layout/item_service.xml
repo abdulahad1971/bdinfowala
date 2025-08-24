@@ -1,0 +1,101 @@
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    app:cardCornerRadius="15dp"
+    android:background="@android:color/white">
+
+    <LinearLayout
+        android:paddingBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/img_product"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:scaleType="centerCrop"
+            app:riv_corner_radius_top_left="15dp"
+            app:riv_corner_radius_top_right="15dp"
+            android:src="@drawable/download"/>
+
+
+        <LinearLayout
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="10dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Service Name"
+                android:textStyle="bold"
+                android:textSize="14sp"
+                android:textColor="@color/black"
+                android:paddingTop="8dp"
+                android:fontFamily="@font/kalpurush"
+                android:maxLines="1"
+                android:ellipsize="end"/>
+
+
+            <TextView
+                android:id="@+id/description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="3dp"
+                android:textColor="#787878"
+                android:text="Service description"
+                android:textSize="12sp"
+                android:fontFamily="@font/kalpurush"
+                android:maxLines="2"
+                android:ellipsize="end"/>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingTop="4dp">
+
+                <!-- Discount Price -->
+                <TextView
+                    android:id="@+id/tv_discount_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="৳ 1300"
+                    android:fontFamily="@font/popins"
+                    android:textColor="#4CAF50"
+                    android:textStyle="bold"
+                    android:textSize="14sp"/>
+
+
+                <!-- Space to push favorite icon to end -->
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"/>
+
+                <!-- Favorite Icon -->
+                <ImageView
+                    android:id="@+id/iv_favorite"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/baseline_favorite_border_24"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+
+</androidx.cardview.widget.CardView>

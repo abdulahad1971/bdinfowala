@@ -1,0 +1,27 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Bdinfowala" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your light theme here. -->
+         <item name="colorPrimary">@color/main_color</item>
+    </style>
+
+    <style name="BottomNavigationViewTextStyle" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="fontFamily">@font/kalpurush</item> <!-- ✅ শুধু fontFamily -->
+        <item name="android:textSize">13sp</item> <!-- (ঐচ্ছিক) -->
+    </style>
+
+    <style name="FullScreenDialog" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
+    <style name="CustomTabText" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">12sp</item> <!-- ছোট সাইজ -->
+        <item name="android:textStyle">bold</item>
+    </style>
+
+
+
+    <style name="Theme.Bdinfowala" parent="Base.Theme.Bdinfowala" />
+</resources>

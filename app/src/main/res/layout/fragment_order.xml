@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".fragments.OrderFragment">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:elevation="2dp"
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/tvWelcome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="আমার অর্ডার"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+            android:fontFamily="@font/kalpurush"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+    </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:tabTextAppearance="@style/CustomTabText"
+            app:tabIndicatorFullWidth="false"
+            app:tabIndicatorColor="@color/tab_indicator"
+            app:tabIndicatorHeight="0dp"
+            app:tabRippleColor="@null"
+            app:tabSelectedTextColor="@color/tab_selected"
+            app:tabTextColor="@color/tab_unselected"
+            app:tabMode="fixed"
+            app:tabGravity="fill" />
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>
