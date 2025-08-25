@@ -22,6 +22,7 @@ import com.bd.bdinfowala.admin.AdminActivity;
 import com.bd.bdinfowala.constants.Urls;
 import com.bd.bdinfowala.databinding.ActivityLoginBinding;
 import com.bd.bdinfowala.view.auth.seassion.SessionManager;
+import com.bd.bdinfowala.forget_password;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -48,23 +49,25 @@ public class LoginActivity extends AppCompatActivity {
                 return insets;
             });
 
-            // Signup এ যাওয়ার লিঙ্ক
-            binding.tvSignUp.setOnClickListener(v -> startActivity(new Intent(LoginActivity.this, SignupActivity.class)));
+            // Signup এ যাওয়ার লিঙ্ক
+            binding.tvSignUp.setOnClickListener(v ->
+                    startActivity(new Intent(LoginActivity.this, SignupActivity.class))
+            );
+
+            // Forget password এ যাওয়ার লিঙ্ক
+            binding.tvForgetPassword.setOnClickListener(v ->
+                    startActivity(new Intent(LoginActivity.this, forget_password.class))
+            );
 
             // Login বাটন ক্লিক
             binding.btnLogin.setOnClickListener(v -> {
-                try {
-                    String email = binding.etEmail.getText().toString().trim();
-                    String password = binding.etPassword.getText().toString().trim();
+                String email = binding.etEmail.getText().toString().trim();
+                String password = binding.etPassword.getText().toString().trim();
 
-                    if(email.isEmpty() || password.isEmpty()){
-                        Toast.makeText(LoginActivity.this, "Email এবং Password পূরণ করুন", Toast.LENGTH_SHORT).show();
-                    } else {
-                        loginUser(email, password);
-                    }
-                } catch (Exception e) {
-                    e.printStackTrace();
-                    Toast.makeText(LoginActivity.this, "Error occurred", Toast.LENGTH_SHORT).show();
+                if(email.isEmpty() || password.isEmpty()){
+                    Toast.makeText(LoginActivity.this, "Email এবং Password পূরণ করুন", Toast.LENGTH_SHORT).show();
+                } else {
+                    loginUser(email, password);
                 }
             });
 

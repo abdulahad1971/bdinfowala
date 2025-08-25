@@ -16,9 +16,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Bdinfowala"
         android:usesCleartextTraffic="true">
+
         <activity
-            android:name=".admin.views.AddCategoryActivity"
+            android:name=".forget_password"
             android:exported="false" />
+
         <activity
             android:name=".admin.AdminActivity"
             android:exported="false" />

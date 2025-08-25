@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".OtpVerify"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+
+                <TextView
+                    android:id="@+id/textverify"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="আপনার ইমেইলটি যাচাই করুন।"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/kalpurush"
+                    android:textColor="#494949"
+                    />
+
+            <ImageView
+                android:id="@+id/imageview"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginRight="20dp"
+                android:src="@drawable/undraw_forgot_password_nttj"
+                android:layout_below="@id/textverify"
+                />
+
+                <TextView
+                    android:id="@+id/textNotice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="অনুগ্রহ করে abc@gmail.com-এ পাঠানো ৬ ডিজিটের কোডটি দিন।"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:gravity="center"
+                    android:textSize="16dp"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/kalpurush"
+                    android:layout_below="@id/imageview"
+                    android:textColor="#504F4F"
+                    />
+
+                <LinearLayout
+                    android:id="@+id/inputotp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_below="@id/textNotice"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:weightSum="6"
+                    >
+
+                    <EditText
+                        android:id="@+id/otp1"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:layout_margin="5dp"
+                        android:background="#dddddd"
+                        android:cursorVisible="false"
+                        android:gravity="center"
+                        android:textSize="20sp"
+                        android:inputType="number"
+                        android:maxLength="1"/>
+
+                    <EditText
+                        android:id="@+id/otp2"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:layout_margin="5dp"
+                        android:background="#dddddd"
+                        android:cursorVisible="false"
+                        android:gravity="center"
+                        android:textSize="20sp"
+                        android:inputType="number"
+                        android:maxLength="1"/>
+
+                    <EditText
+                        android:id="@+id/otp3"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:layout_margin="5dp"
+                        android:background="#dddddd"
+                        android:cursorVisible="false"
+                        android:gravity="center"
+                        android:textSize="20sp"
+                        android:inputType="number"
+                        android:maxLength="1"/>
+
+                    <EditText
+                        android:id="@+id/otp4"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:layout_margin="5dp"
+                        android:background="#dddddd"
+                        android:cursorVisible="false"
+                        android:gravity="center"
+                        android:textSize="20sp"
+                        android:inputType="number"
+                        android:maxLength="1"/>
+
+                    <EditText
+                        android:id="@+id/otp5"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:layout_margin="5dp"
+                        android:background="#dddddd"
+                        android:cursorVisible="false"
+                        android:gravity="center"
+                        android:textSize="20sp"
+                        android:inputType="number"
+                        android:maxLength="1"/>
+
+                    <EditText
+                        android:id="@+id/otp6"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:layout_margin="5dp"
+                        android:background="#dddddd"
+                        android:cursorVisible="false"
+                        android:gravity="center"
+                        android:textSize="20sp"
+                        android:inputType="number"
+                        android:maxLength="1"/>
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/resentCode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_below="@id/inputotp"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center_horizontal">
+
+                    <TextView
+                        android:id="@+id/resendText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="OTP পুনরায় পাঠান"
+                        android:textSize="16sp"
+                        android:textColor="#000000"
+                        />
+
+                    <View
+                        android:id="@+id/underlineView"
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:background="#dddddd"
+                        />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/verify_otp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ভেরিফাই করুন"
+                    app:cornerRadius="0dp"
+                    android:textSize="16dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="30dp"
+                    android:backgroundTint="@color/main_color"
+                    android:layout_below="@id/resentCode"
+                    android:layout_centerInParent="true"
+                    />
+
+
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:layout_below="@id/resentCode"
+                    android:layout_marginTop="30dp"
+                    />
+
+
+
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
