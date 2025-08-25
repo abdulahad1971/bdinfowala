@@ -7,9 +7,12 @@ import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.cardview.widget.CardView;
 import androidx.core.content.res.ResourcesCompat;
 import androidx.fragment.app.Fragment;
 
@@ -20,6 +23,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
 import com.bd.bdinfowala.R;
+import com.bd.bdinfowala.databinding.FragmentHomeBinding;
 import com.bd.bdinfowala.fragments.servicefragments.ServiceFragment;
 import com.bd.bdinfowala.model.Category;
 import com.denzcoskun.imageslider.ImageSlider;
@@ -36,14 +40,23 @@ import java.util.List;
 
 public class HomeFragment extends Fragment {
 
+    private CardView bView;
     private ImageSlider image_slider;
     private TabLayout tabLayout;
     private List<Category> categoryList = new ArrayList<>();
     private static final String URL = "http://192.168.0.103/practice_api/test.json";
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
+
+        //for blance anim
+        bView=view.findViewById(R.id.view);
+        bView.setOnClickListener(v->{
+            Animation animation = AnimationUtils.loadAnimation(getContext(), R.anim.blance_anim);
+            bView.startAnimation(animation);
+        });
 
         // Image Slider
         image_slider = view.findViewById(R.id.image_slider);

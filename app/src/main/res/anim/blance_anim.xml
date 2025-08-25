@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shareInterpolator="false">
+
+    <!-- Step 1: ডান থেকে বামে যাবে -->
+    <translate
+        android:fromXDelta="0%"
+        android:toXDelta="-100%"
+        android:duration="1000"
+        android:fillAfter="true"/>
+
+    <!-- Step 2: থেমে থাকবে (কোনো মুভমেন্ট নেই, শুধু delay) -->
+    <translate
+        android:fromXDelta="0%"
+        android:toXDelta="0%"
+        android:startOffset="1000"
+        android:duration="3000"
+        android:fillAfter="true"/>
+
+    <!-- Step 3: আবার আগের জায়গায় ফিরে আসবে -->
+    <translate
+        android:fromXDelta="0%"
+        android:toXDelta="100%"
+        android:startOffset="4000"
+        android:duration="1000"
+        android:fillAfter="true"/>
+</set>
