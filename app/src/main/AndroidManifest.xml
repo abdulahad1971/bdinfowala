@@ -46,14 +46,14 @@
             android:exported="false"
             android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
-            android:name=".MainActivity"
+            android:name=".view.main.SplashActivity"
             android:exported="false" />
         <activity
             android:name=".view.auth.LoginActivity"
             android:exported="true"
             android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
-            android:name=".view.main.SplashActivity"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

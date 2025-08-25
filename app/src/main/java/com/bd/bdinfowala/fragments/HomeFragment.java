@@ -20,7 +20,6 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
 import com.bd.bdinfowala.R;
-import com.bd.bdinfowala.constants.Urls;
 import com.bd.bdinfowala.fragments.servicefragments.ServiceFragment;
 import com.bd.bdinfowala.model.Category;
 import com.denzcoskun.imageslider.ImageSlider;
@@ -40,7 +39,7 @@ public class HomeFragment extends Fragment {
     private ImageSlider image_slider;
     private TabLayout tabLayout;
     private List<Category> categoryList = new ArrayList<>();
-    private static final String URL = Urls.showCategoryUrl;
+    private static final String URL = "http://192.168.0.103/practice_api/test.json";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -122,44 +121,48 @@ public class HomeFragment extends Fragment {
                 Request.Method.GET,
                 URL,
                 null,
-                response -> {
-                    try {
-                        categoryList.clear();
-                        tabLayout.removeAllTabs();
+                new Response.Listener<JSONArray>() {
+                    @Override
+                    public void onResponse(JSONArray response) {
+                        try {
+                            categoryList.clear();
+                            tabLayout.removeAllTabs();
 
-                        for (int i = 0; i < response.length(); i++) {
-                            JSONObject obj = response.getJSONObject(i);
-                            int id = obj.getInt("id");
-                            String name = obj.getString("name"); // Bengali text
+                            for (int i = 0; i < response.length(); i++) {
+                                JSONObject obj = response.getJSONObject(i);
+                                int id = obj.getInt("id");
+                                String name = obj.getString("name");
 
-                            Category category = new Category(id, name);
-                            categoryList.add(category);
+                                Category category = new Category(id, name);
+                                categoryList.add(category);
 
-                            tabLayout.addTab(tabLayout.newTab().setText(name));
-                        }
-
-                        // Apply font/color/margin to first tab
-                        if (!categoryList.isEmpty()) {
-                            Category first = categoryList.get(0);
-                            openServiceFragment(first.getId(), first.getName());
-
-                            View firstTabView = ((ViewGroup) tabLayout.getChildAt(0)).getChildAt(0);
-                            if (firstTabView instanceof ViewGroup) {
-                                setTabFontAndMargin((ViewGroup) firstTabView, true);
+                                tabLayout.addTab(tabLayout.newTab().setText(name));
                             }
-                        }
 
-                    } catch (JSONException e) {
-                        Toast.makeText(requireContext(), "Parse error", Toast.LENGTH_SHORT).show();
+                            // Apply font/color/margin to first tab
+                            if (!categoryList.isEmpty()) {
+                                Category first = categoryList.get(0);
+                                openServiceFragment(first.getId(), first.getName());
+                                View firstTabView = ((ViewGroup) tabLayout.getChildAt(0)).getChildAt(0);
+                                if (firstTabView instanceof ViewGroup) {
+                                    setTabFontAndMargin((ViewGroup) firstTabView, true);
+                                }
+                            }
+
+                        } catch (JSONException e) {
+                            Toast.makeText(requireContext(), "Parse error", Toast.LENGTH_SHORT).show();
+                        }
                     }
                 },
-                error -> {
-                    Toast.makeText(requireContext(), "Volley Error: " + error.getMessage(), Toast.LENGTH_LONG).show();
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(requireContext(), "Volley Error: " + error.getMessage(), Toast.LENGTH_LONG).show();
+                    }
                 });
 
         queue.add(request);
     }
-
 
     private void openServiceFragment(int categoryId, String categoryName) {
         getChildFragmentManager().beginTransaction()

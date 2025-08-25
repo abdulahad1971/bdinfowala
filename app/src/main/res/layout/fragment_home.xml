@@ -60,14 +60,54 @@
                         android:textSize="16dp"/>
 
 
-                    <TextView
-                        android:layout_width="wrap_content"
+                    <RelativeLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="১০০০"
-                        android:fontFamily="@font/kalpurush"
-                        android:textColor="#474646"
-                        android:textStyle="normal"
-                        android:textSize="12dp"/>
+                        >
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/view"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:cardCornerRadius="10dp"
+                            android:padding="3dp"
+                            >
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                >
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="ব্যালেন্স"
+                                    android:fontFamily="@font/kalpurush"
+                                    android:textColor="@color/white"
+                                    android:textStyle="normal"
+                                    android:textSize="15dp"
+                                    android:gravity="center"
+                                    android:background="@color/main_color"
+                                    />
+
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+
+                        <TextView
+                            android:id="@+id/balance"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="১০০০"
+                            android:fontFamily="@font/kalpurush"
+                            android:textColor="#474646"
+                            android:textStyle="normal"
+                            android:textSize="15dp"
+                            android:gravity="center"
+                            />
+
+                    </RelativeLayout>
+
 
 
 
@@ -80,7 +120,8 @@
                     android:layout_gravity="center"
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    >
 
 
                 </LinearLayout>
