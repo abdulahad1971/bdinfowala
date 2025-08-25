@@ -75,7 +75,6 @@
                     app:riv_oval="true"
                     android:scaleType="centerCrop"
                     android:src="@drawable/man"
-
                     />
 
                 <ImageView
