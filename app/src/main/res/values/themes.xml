@@ -2,7 +2,20 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.Bdinfowala" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Customize your light theme here. -->
-         <item name="colorPrimary">@color/main_color</item>
+
+        <!-- Customize your theme here -->
+        <item name="colorPrimary">@color/main_color</item>
+        <item name="colorPrimaryVariant">@color/main_color</item>
+        <item name="colorOnPrimary">@android:color/white</item>
+        <item name="colorSecondary">@color/main_color</item>
+        <item name="colorOnSecondary">@android:color/white</item>
+
+        <item name="tabIndicatorColor">@android:color/transparent</item>
+        <item name="tabBackground">@android:color/transparent</item>
+        <item name="tabTextAppearance">@android:color/transparent</item>
+        <item name="tabSelectedTextColor">@android:color/transparent</item>
+
+
     </style>
 
     <style name="BottomNavigationViewTextStyle" parent="TextAppearance.MaterialComponents.Caption">

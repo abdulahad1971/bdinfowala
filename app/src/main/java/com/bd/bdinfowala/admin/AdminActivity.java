@@ -55,28 +55,28 @@ public class AdminActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new GridLayoutManager(this, 2)); // 2 column
 
         List<AdminOption> options = new ArrayList<>();
-        options.add(new AdminOption("Order", R.drawable.order));
+        options.add(new AdminOption("অর্ডার", R.drawable.order_processing));
         options.add(new AdminOption("Add Products", R.drawable.order));
-        options.add(new AdminOption("Categories", R.drawable.categories));
-        options.add(new AdminOption("Banner", R.drawable.slider));
-        options.add(new AdminOption("Service", R.drawable.service));
-        options.add(new AdminOption("User", R.drawable.user));
+        options.add(new AdminOption("ক্যাটাগরী", R.drawable.classification));
+        options.add(new AdminOption("ব্যানার", R.drawable.advertising));
+        options.add(new AdminOption("সার্ভিস", R.drawable.service));
+        options.add(new AdminOption("ইউজার", R.drawable.working));
 
 
         AdminOptionAdapter adapter = new AdminOptionAdapter(this, options, position -> {
             switch (position) {
                 case 0:
-                    startActivity(new Intent(this, AddCategoryActivity.class));
+//                    startActivity(new Intent(this, AddCategoryActivity.class));
                     break;
                 case 1:
 //                    startActivity(new Intent(this, AddProductsActivity.class));
                     break;
                 case 2:
-//                    startActivity(new Intent(this, ViewCategoryActivity.class));
+                    startActivity(new Intent(this, AddCategoryActivity.class));
                     break;
 
                 case 3:
-//                    startActivity(new Intent(this, ImageSliderActivity.class));
+
                     break;
 
                 case 4:

@@ -15,7 +15,7 @@ public class Urls {
 
 
     // main content
-
+    public  static  String insertCategoryUrl =  domainUrl +"service/insert_category.php";
 
 
 }
