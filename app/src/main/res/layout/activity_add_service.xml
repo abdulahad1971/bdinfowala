@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".admin.views.AddCategoryActivity">
+    tools:context=".admin.views.AddServiceActivity">
 
 
     <androidx.appcompat.widget.Toolbar
@@ -40,7 +40,7 @@
                 android:layout_weight="1"
                 android:ellipsize="end"
                 android:maxLines="1"
-                android:text="ক্যাটাগরি ম্যানেজমেন্ট"
+                android:text="সার্ভিস ম্যানেজমেন্ট"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 android:fontFamily="@font/kalpurush"
@@ -52,7 +52,7 @@
                 android:id="@+id/tvCategoryCount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="মোট ক্যাটাগরি: 0"
+                android:text="মোট সার্ভিস : 0"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 android:fontFamily="@font/kalpurush"
@@ -84,7 +84,7 @@
             android:visibility="visible"
             app:iconifiedByDefault="false"
             app:queryBackground="@android:color/transparent"
-            app:queryHint="সার্চ ক্যাটেগরী..." />
+            app:queryHint="সার্চ সার্ভিস..." />
 
         <ProgressBar
             android:id="@+id/progressBar"
@@ -92,15 +92,22 @@
             android:visibility="gone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-             />
+            />
 
         <androidx.recyclerview.widget.RecyclerView
             android:layout_below="@+id/searchView"
-            android:id="@+id/recyclerViewCategories"
+            android:id="@+id/recyclerViewService"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:padding="8dp"
             android:clipToPadding="false"/>
+
+
+
+
+
+
+
     </RelativeLayout>
 
 

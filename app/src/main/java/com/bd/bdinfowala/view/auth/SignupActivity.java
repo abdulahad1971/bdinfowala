@@ -84,6 +84,7 @@ public class SignupActivity extends AppCompatActivity {
             progressDialog.setCancelable(false);
             progressDialog.show();
 
+
             String url = Urls.signUrl;
             RequestQueue queue = Volley.newRequestQueue(this);
             SessionManager session = new SessionManager(SignupActivity.this);
@@ -122,6 +123,7 @@ public class SignupActivity extends AppCompatActivity {
                             progressDialog.dismiss();
                             error.printStackTrace();
                             Toast.makeText(SignupActivity.this, "Network Error", Toast.LENGTH_SHORT).show();
+                            Log.d("dsdfsdfsd",error.toString());
                         } catch (Exception e) {
                             e.printStackTrace();
                             Toast.makeText(SignupActivity.this, "Error handling network response", Toast.LENGTH_SHORT).show();

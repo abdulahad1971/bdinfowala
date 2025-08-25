@@ -17,6 +17,12 @@
         android:theme="@style/Theme.Bdinfowala"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".admin.views.InsertServiceActivity"
+            android:exported="false" />
+        <activity
+            android:name=".admin.views.AddServiceActivity"
+            android:exported="false" />
+        <activity
             android:name=".admin.views.BannerActivity"
             android:exported="false" />
         <activity

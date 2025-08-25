@@ -2,4 +2,14 @@
     <string name="app_name">bdinfowala</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <string-array name="field_types">
+        <item>text</item>
+        <item>number</item>
+        <item>date</item>
+        <item>file</item>
+        <item>textarea</item>
+    </string-array>
+
 </resources>

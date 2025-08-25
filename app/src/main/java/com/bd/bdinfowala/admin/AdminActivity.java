@@ -16,6 +16,7 @@ import com.bd.bdinfowala.R;
 import com.bd.bdinfowala.admin.adapter.AdminOptionAdapter;
 import com.bd.bdinfowala.admin.model.AdminOption;
 import com.bd.bdinfowala.admin.views.AddCategoryActivity;
+import com.bd.bdinfowala.admin.views.AddServiceActivity;
 import com.bd.bdinfowala.admin.views.BannerActivity;
 import com.bd.bdinfowala.databinding.ActivityAdminBinding;
 import com.bd.bdinfowala.view.auth.LoginActivity;
@@ -81,7 +82,7 @@ public class AdminActivity extends AppCompatActivity {
                     break;
 
                 case 4:
-//                    startActivity(new Intent(this, UserListActivity.class));
+                    startActivity(new Intent(this, AddServiceActivity.class));
                     break;
 
                 case 5:

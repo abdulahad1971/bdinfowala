@@ -39,20 +39,26 @@ public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.ServiceV
     public void onBindViewHolder(@NonNull ServiceViewHolder holder, int position) {
         Service service = serviceList.get(position);
 
-        holder.tvName.setText(service.getName());
+        // Bind data from new Service model
+        holder.tvName.setText(service.getServiceName());
         holder.description.setText(service.getDescription());
         holder.tvDiscountPrice.setText("৳ " + service.getPrice());
 
-        // Image load (Glide / Picasso)
+        // Optionally show features or days
+        // holder.tvFeatures.setText(service.getFeatures());
+        // holder.tvDays.setText(service.getDays());
+
+
+
         Glide.with(context)
                 .load(service.getImageUrl())
-                .placeholder(R.drawable.download)
+                .placeholder(R.drawable.download) // placeholder image
                 .into(holder.imgProduct);
 
-        // Favorite click example
-        holder.ivFavorite.setOnClickListener(v -> {
-            Toast.makeText(context, "Favorite clicked for " + service.getName(), Toast.LENGTH_SHORT).show();
-        });
+        // Example favorite click
+        holder.ivFavorite.setOnClickListener(v ->
+                Toast.makeText(context, "Favorite clicked for " + service.getServiceName(), Toast.LENGTH_SHORT).show()
+        );
     }
 
     @Override
