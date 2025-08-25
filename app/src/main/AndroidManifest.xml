@@ -17,6 +17,9 @@
         android:theme="@style/Theme.Bdinfowala"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".admin.views.AddCategoryActivity"
+            android:exported="false" />
+        <activity
             android:name=".admin.AdminActivity"
             android:exported="false" />
         <activity
@@ -24,18 +27,21 @@
             android:exported="false" />
         <activity
             android:name=".view.auth.ProfileEditActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
             android:name=".view.auth.SignupActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
             android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".view.SplashActivity"
-            android:exported="true" />
-        <activity
             android:name=".view.auth.LoginActivity"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name=".view.main.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

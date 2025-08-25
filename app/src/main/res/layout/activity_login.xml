@@ -58,7 +58,7 @@
                 android:text="দয়া করে লগইন করুন"
                 android:textSize="16sp"
                 android:fontFamily="@font/kalpurush"
-                android:textColor="@color/grey_font"
+                android:textColor="#504F4F"
                 android:layout_marginBottom="15dp" />
 
 
@@ -87,7 +87,7 @@
                 app:startIconDrawable="@android:drawable/ic_lock_lock"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 app:endIconMode="password_toggle"
-                android:layout_marginBottom="20dp">
+                android:layout_marginBottom="15dp">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etPassword"

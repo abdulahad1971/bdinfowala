@@ -21,15 +21,6 @@
             android:padding="24dp"
             android:gravity="center_horizontal">
 
-            <!-- Logo -->
-            <ImageView
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:src="@drawable/signup"
-                android:contentDescription="Login Logo"
-                android:layout_marginBottom="30dp"
-                android:scaleType="centerCrop" />
-
 
 
             <!-- Title Text -->
@@ -58,7 +49,7 @@
                 android:text="চালিয়ে যেতে আপনার তথ্য দিন"
                 android:textSize="16sp"
                 android:fontFamily="@font/kalpurush"
-                android:textColor="@color/grey_font"
+                android:textColor="#504F4F"
                 android:layout_marginBottom="15dp" />
 
 
@@ -69,7 +60,7 @@
                 android:hint="নাম"
                 app:startIconDrawable="@drawable/baseline_person_24"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_marginBottom="16dp">
+                android:layout_marginBottom="12dp">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etName"
@@ -86,7 +77,7 @@
                 android:hint="ফোন নাম্বার"
                 app:startIconDrawable="@drawable/baseline_phone_android_24"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_marginBottom="16dp">
+                android:layout_marginBottom="12dp">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etPhone"
@@ -100,10 +91,28 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:hint="ঠিকানা"
+                app:startIconDrawable="@drawable/baseline_location_on_24"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_marginBottom="12dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etAddress"
+                    android:layout_width="match_parent"
+                    android:fontFamily="@font/kalpurush"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPostalAddress" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:hint="ইমেইল"
                 app:startIconDrawable="@drawable/baseline_email_24"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_marginBottom="16dp">
+                android:layout_marginBottom="12dp">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etEmail"
@@ -151,7 +160,7 @@
 
             <!-- Sign Up -->
             <TextView
-                android:id="@+id/tvSignUp"
+                android:id="@+id/tvLogin"
                 android:layout_width="wrap_content"
                 android:fontFamily="@font/kalpurush"
                 android:layout_height="wrap_content"

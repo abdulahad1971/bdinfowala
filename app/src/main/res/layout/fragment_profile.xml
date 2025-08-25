@@ -82,7 +82,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/kalpurush"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="10dp"
                 android:text="আব্দুল আহাদ"
                 android:textSize="18sp"
                 android:textStyle="bold"
@@ -103,6 +103,7 @@
 
             <!-- Phone -->
             <TextView
+                android:id="@+id/phone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/kalpurush"
@@ -114,7 +115,7 @@
 
 
             <TextView
-                android:id="@+id/phone"
+                android:id="@+id/profileAddress"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/kalpurush"

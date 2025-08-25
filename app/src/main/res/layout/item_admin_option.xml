@@ -1,0 +1,30 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="16dp"
+    android:elevation="6dp"
+    android:layout_margin="8dp">
+
+    <!-- আইকন -->
+    <ImageView
+        android:id="@+id/imgIcon"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:tint="#ffffff"
+        android:background="@drawable/man"
+        android:padding="12dp"
+        android:elevation="4dp" />
+
+    <!-- টাইটেল -->
+    <TextView
+        android:id="@+id/txtTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Option Title"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:layout_marginTop="12dp"
+        android:textStyle="bold" />
+</LinearLayout>
