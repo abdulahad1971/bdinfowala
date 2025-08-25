@@ -1,6 +1,7 @@
 package com.bd.bdinfowala.fragments.servicefragments;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,9 +22,9 @@ import com.bd.bdinfowala.R;
 import com.bd.bdinfowala.adapter.ServiceAdapter;
 import com.bd.bdinfowala.constants.Urls;
 import com.bd.bdinfowala.model.Service;
+import com.facebook.shimmer.ShimmerFrameLayout;
 
 import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -38,12 +39,12 @@ public class ServiceFragment extends Fragment {
     private String categoryName;
 
     RecyclerView recyclerView;
+    TextView tvEmpty;
+    ShimmerFrameLayout shimmerLayout;
     List<Service> serviceList;
     ServiceAdapter adapter;
 
-    public ServiceFragment() {
-        // Required empty public constructor
-    }
+    public ServiceFragment() {}
 
     public static ServiceFragment newInstance(int categoryId, String categoryName) {
         ServiceFragment fragment = new ServiceFragment();
@@ -72,12 +73,20 @@ public class ServiceFragment extends Fragment {
         TextView tv = v.findViewById(R.id.tvInfo);
         tv.setText(categoryName);
 
+        tvEmpty = v.findViewById(R.id.tvEmpty);
+        shimmerLayout = v.findViewById(R.id.shimmerLayout);
         recyclerView = v.findViewById(R.id.recyclerView);
-        recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2)); // 2 columns
+        recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2));
 
         serviceList = new ArrayList<>();
         adapter = new ServiceAdapter(getContext(), serviceList);
         recyclerView.setAdapter(adapter);
+
+        // Shimmer start
+        shimmerLayout.startShimmer();
+        shimmerLayout.setVisibility(View.VISIBLE);
+        recyclerView.setVisibility(View.GONE);
+        tvEmpty.setVisibility(View.GONE);
 
         loadServices(categoryId);
 
@@ -85,7 +94,12 @@ public class ServiceFragment extends Fragment {
     }
 
     private void loadServices(int categoryId) {
-        String url = Urls.getServicesByCategory + "?category_id=" + categoryId;
+        String url;
+        if (categoryId == 0) {
+            url = Urls.showServiceUrl; // All services API
+        } else {
+            url = Urls.getServicesByCategory + "?category_id=" + categoryId;
+        }
 
         RequestQueue queue = Volley.newRequestQueue(requireContext());
 
@@ -96,42 +110,52 @@ public class ServiceFragment extends Fragment {
                         for (int i = 0; i < response.length(); i++) {
                             JSONObject obj = response.getJSONObject(i);
 
-                            int id = obj.optInt("id", 0);
-                            int catId = obj.optInt("category_id", categoryId);
-                            String catName = obj.optString("category_name", "");
-                            String serviceName = obj.optString("service_name", "");
-                            String description = obj.optString("description", "");
-                            String features = obj.optString("features", "");
-                            String price = obj.optString("price", "0");
-                            String days = obj.optString("days", "");
-                            String imageUrl = obj.optString("image_url", "");
-                            String requirementJson = obj.optString("requirement_json", "");
-
                             Service service = new Service(
-                                    id,
-                                    catId,
-                                    catName,
-                                    serviceName,
-                                    description,
-                                    features,
-                                    price,
-                                    days,
-                                    imageUrl,
-                                    requirementJson
+                                    obj.optInt("id", 0),
+                                    obj.optInt("category_id", categoryId),
+                                    obj.optString("category_name", ""),
+                                    obj.optString("service_name", ""),
+                                    obj.optString("description", ""),
+                                    obj.optString("features", ""),
+                                    obj.optString("price", "0"),
+                                    obj.optString("days", ""),
+                                    obj.optString("image_url", ""),
+                                    obj.optString("requirement_json", "")
                             );
 
                             serviceList.add(service);
                         }
+
                         adapter.notifyDataSetChanged();
-                    } catch (JSONException e) {
+
+                        // Shimmer stop
+                        shimmerLayout.stopShimmer();
+                        shimmerLayout.setVisibility(View.GONE);
+
+                        // Empty check
+                        if (serviceList.isEmpty()) {
+                            tvEmpty.setVisibility(View.VISIBLE);
+                            recyclerView.setVisibility(View.GONE);
+                        } else {
+                            tvEmpty.setVisibility(View.GONE);
+                            recyclerView.setVisibility(View.VISIBLE);
+                        }
+
+                    } catch (Exception e) {
                         e.printStackTrace();
+                        shimmerLayout.stopShimmer();
+                        shimmerLayout.setVisibility(View.GONE);
                         Toast.makeText(requireContext(), "Parse error", Toast.LENGTH_SHORT).show();
                     }
                 },
-                error -> Toast.makeText(requireContext(), "Volley Error: " + error.getMessage(), Toast.LENGTH_LONG).show()
+                error -> {
+                    shimmerLayout.stopShimmer();
+                    shimmerLayout.setVisibility(View.GONE);
+                    Toast.makeText(requireContext(), "Volley Error: " + error.getMessage(), Toast.LENGTH_LONG).show();
+                    Log.d("ServiceFragment", error.toString());
+                }
         );
 
         queue.add(request);
     }
-
 }

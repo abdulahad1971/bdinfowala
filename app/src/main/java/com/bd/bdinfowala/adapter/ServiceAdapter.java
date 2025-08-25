@@ -1,6 +1,7 @@
 package com.bd.bdinfowala.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,7 +13,9 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bd.bdinfowala.R;
+import com.bd.bdinfowala.constants.Urls;
 import com.bd.bdinfowala.model.Service;
+import com.bd.bdinfowala.view.main.ServiceDetailsActivity;
 import com.bumptech.glide.Glide;
 import com.makeramen.roundedimageview.RoundedImageView;
 
@@ -50,15 +53,33 @@ public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.ServiceV
 
 
 
+
         Glide.with(context)
-                .load(service.getImageUrl())
+                .load(Urls.imageUrl + "uploads/images/" +service.getImageUrl())
                 .placeholder(R.drawable.download) // placeholder image
                 .into(holder.imgProduct);
 
-        // Example favorite click
+
         holder.ivFavorite.setOnClickListener(v ->
                 Toast.makeText(context, "Favorite clicked for " + service.getServiceName(), Toast.LENGTH_SHORT).show()
         );
+
+        holder.itemView.setOnClickListener(v -> {
+            Intent intent = new Intent(context, ServiceDetailsActivity.class);
+            intent.putExtra("id", service.getId());
+            intent.putExtra("category_id", service.getCategoryId());
+            intent.putExtra("category_name", service.getCategoryName());
+            intent.putExtra("service_name", service.getServiceName());
+            intent.putExtra("description", service.getDescription());
+            intent.putExtra("features", service.getFeatures());
+            intent.putExtra("price", service.getPrice());
+            intent.putExtra("days", service.getDays());
+            intent.putExtra("image_url", service.getImageUrl());
+            intent.putExtra("requirement_json", service.getRequirementJson());
+            context.startActivity(intent);
+        });
+
+
     }
 
     @Override

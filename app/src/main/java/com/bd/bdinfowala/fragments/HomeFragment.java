@@ -157,9 +157,8 @@ public class HomeFragment extends Fragment {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        if (isAdded() && getContext() != null) {
-                            Toast.makeText(getContext(), "Volley Error: " + error.getMessage(), Toast.LENGTH_LONG).show();
-                        }                    }
+                        Toast.makeText(requireContext(), "Volley Error: " + error.getMessage(), Toast.LENGTH_LONG).show();
+                    }
                 });
 
         queue.add(request);

@@ -18,6 +18,15 @@
 
     </style>
 
+    <style name="TextInputHint" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/kalpurush</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+
+
     <style name="BottomNavigationViewTextStyle" parent="TextAppearance.MaterialComponents.Caption">
         <item name="fontFamily">@font/kalpurush</item> <!-- ✅ শুধু fontFamily -->
         <item name="android:textSize">13sp</item> <!-- (ঐচ্ছিক) -->
