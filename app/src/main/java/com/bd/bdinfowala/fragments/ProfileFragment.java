@@ -1,11 +1,15 @@
 package com.bd.bdinfowala.fragments;
 
+import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -78,8 +82,23 @@ public class ProfileFragment extends Fragment {
             }
         });
 
+
+        binding.optionRateUs.setOnClickListener(v->{
+           rateUs();
+        });
+
+        binding.optionShareApp.setOnClickListener(v->{
+            shareApp();
+        });
+
+
+        binding.optionAboutApp.setOnClickListener(v->{
+            showAboutDialog();
+        });
+
+
         return binding.getRoot();
-    }
+    }//=================================oncreate end here================
 
     private void fetchProfile() {
         try {
@@ -140,8 +159,9 @@ public class ProfileFragment extends Fragment {
                             Toast.makeText(getContext(), "JSON parse error", Toast.LENGTH_SHORT).show();
                         } catch (Exception e) {
                             e.printStackTrace();
-                            Toast.makeText(getContext(), "Unexpected error", Toast.LENGTH_SHORT).show();
-                        }
+                            if (isAdded() && getContext() != null) {
+                                Toast.makeText(getContext(), "Unexpected error", Toast.LENGTH_SHORT).show();
+                            }                        }
                     },
                     error -> {
                         try {
@@ -168,6 +188,49 @@ public class ProfileFragment extends Fragment {
             Toast.makeText(getContext(), "Failed to fetch profile", Toast.LENGTH_SHORT).show();
         }
     }
+
+
+    private void rateUs() {
+        Context context = getContext(); // Fragment এর context নিন
+        if (context == null) return;    // null check
+
+        try {
+            Uri uri = Uri.parse("market://details?id=" + context.getPackageName());
+            Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            context.startActivity(intent);
+        } catch (android.content.ActivityNotFoundException e) {
+            Uri uri = Uri.parse("https://play.google.com/store/apps/details?id=" + context.getPackageName());
+            Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            context.startActivity(intent);
+        }
+    }
+
+
+    private void shareApp() {
+        Context context = getContext(); // Fragment context নিন
+        if (context == null) return;    // Null check
+
+        String shareMessage = "https://play.google.com/store/apps/details?id=" + context.getPackageName();
+
+        Intent shareIntent = new Intent(Intent.ACTION_SEND);
+        shareIntent.setType("text/plain");
+        shareIntent.putExtra(Intent.EXTRA_TEXT, shareMessage);
+
+        context.startActivity(Intent.createChooser(shareIntent, "Share via"));
+    }
+
+
+
+    private void showAboutDialog() {
+        Dialog dialog = new Dialog(getContext());
+        dialog.setContentView(R.layout.about_app);
+        dialog.setCancelable(true);
+        dialog.show();
+    }
+
+
 
     @Override
     public void onResume() {

@@ -65,7 +65,7 @@ public class CreateNewPassword extends Fragment {
     }
 
     private void resetPassword(String email, String newPassword) {
-        String url = "https://buffel.xyz/blood_village/reset_password.php";
+        String url = "https://bdinfowala.com/bdinfowala/api/send_mail/reset_password.php";
 
         binding.progressBar.setVisibility(View.VISIBLE);
         binding.resetButton.setEnabled(false);

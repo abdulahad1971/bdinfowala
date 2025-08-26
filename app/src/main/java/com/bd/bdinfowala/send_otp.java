@@ -31,7 +31,6 @@ public class send_otp extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         binding=FragmentSendOtpBinding.inflate(inflater,container,false);
-        if (container!=null) container.removeAllViews();
 
         binding.sendOtp.setOnClickListener(v -> {
 

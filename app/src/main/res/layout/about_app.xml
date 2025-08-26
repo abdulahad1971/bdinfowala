@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/shapeImage"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                app:shapeAppearanceOverlay="@style/circelImageView"
+                android:layout_centerHorizontal="true"
+                android:src="@mipmap/ic_launcher"
+                android:scaleType="centerCrop"
+                app:strokeColor="@color/main_color"
+                app:strokeWidth="1dp"
+                android:padding="2dp"
+                />
+
+            <TextView
+                android:id="@+id/textAppName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                android:layout_below="@id/shapeImage"
+                android:layout_centerHorizontal="true"
+                android:textSize="22dp"
+                android:textStyle="bold"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/kalpurush"
+                />
+
+            <TextView
+                android:id="@+id/appDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="অ্যাপের সারসংক্ষেপ
+
+BDinfowala হলো একটি সম্পূর্ণ ডিজিটাল সার্ভিস প্ল্যাটফর্ম, যা বাংলাদেশের বিভিন্ন সরকারি, আর্থিক ও ডিজিটাল সেবা ব্যবহারকে সহজ, দ্রুত এবং নিরাপদ করে।
+
+আপনি চাইলে সরকারী নথি হালনাগাদ, ডিজিটাল পেমেন্ট, বা পরিচয় যাচাই—BDinfowala সবকিছু এক জায়গায় সরবরাহ করে।
+
+প্রদত্ত প্রধান সেবা
+
+NID (জাতীয় পরিচয়পত্র) সেবা
+
+NID তথ্য যাচাই
+
+NID ডেটা ভেরিফাই
+
+সংশোধন বা আপডেটের আবেদন
+
+জন্ম নিবন্ধন সেবা
+
+জন্ম নিবন্ধন
+
+বিদ্যমান তথ্য সংশোধন ও হালনাগাদ
+
+নথি সংশোধন সেবা
+
+জন্ম, মৃত্যু, বা বিবাহ সংক্রান্ত তথ্য সংশোধন
+
+দ্রুত ও কার্যকর সরকারি নথি হালনাগাদ
+
+বায়ো ডেটা যাচাই
+
+ব্যক্তিগত ও পেশাগত তথ্য যাচাই
+
+তথ্যের প্রামাণিকতা নিশ্চিত করা
+
+TIN ও কর ফাইলিং সেবা
+
+TIN নিবন্ধনের আবেদন
+
+কর রিটার্ন দ্রুত ও সঠিকভাবে দাখিল
+
+পুলিশ ক্লিয়ারেন্স সার্টিফিকেট
+
+সরকারি বা অফিসিয়াল কাজে ক্লিয়ারেন্স
+
+নিরাপদ ও প্রামাণিক প্রসেসিং
+
+নম্বর ও লোকেশন সেবা
+
+মোবাইল নম্বর বা লোকেশন ভিত্তিক সেবা
+
+সহজ যাচাই ও ট্র্যাকিং
+
+ডিজিটাল পেমেন্ট সেবা (বিকাশ, নগদ ইত্যাদি)
+
+নিরাপদ মোবাইল লেনদেন
+
+অ্যাপের মধ্যে সরাসরি পেমেন্ট
+
+অন্যান্য ডিজিটাল সেবা
+
+বিভিন্ন অনলাইন সেবা এক্সেস
+
+ভবিষ্যতে আরও নতুন সুবিধা সংযোজন হবে
+
+গোপনীয়তা ও নিরাপত্তা
+
+ব্যবহারকারীর তথ্য নিরাপদ এবং গোপনীয় রাখা হয়।
+
+BDinfowala কোনো ব্যক্তিগত তথ্য তৃতীয় পক্ষের সঙ্গে শেয়ার করে না।
+
+সমস্ত লেনদেন ও যোগাযোগ নিরাপদ প্রোটোকল ব্যবহার করে সুরক্ষিত।
+
+BDinfowala কেন বেছে নেবেন?
+
+সবকিছু এক জায়গায়: এক প্ল্যাটফর্মে সরকারি ও ডিজিটাল সেবা।
+
+সময় বাঁচানো: অফিসে গিয়ে বহু জায়গায় না গিয়ে দ্রুত সেবা।
+
+সহজ ব্যবহার: সবার জন্য সহজ ও ইউজার-ফ্রেন্ডলি ইন্টারফেস।
+
+নির্ভরযোগ্য ও নিরাপদ: তথ্য গোপনীয়তা ও স্বচ্ছতা নিশ্চিত।"
+                android:layout_below="@id/textAppName"
+                android:padding="10dp"
+                android:paddingBottom="50dp"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/kalpurush"
+                />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+</ScrollView>
