@@ -53,7 +53,7 @@ public class send_otp extends Fragment {
 
     private void sendOtpRequest(final String email) {
         RequestQueue queue = Volley.newRequestQueue(getContext());
-        String OTP_URL = "https://buffel.xyz/blood_village/send_mail/send_otp.php";
+        String OTP_URL = "https://bdinfowala.com/bdinfowala/api/send_mail/send_otp.php";
         binding.progressBar.setVisibility(View.VISIBLE);
         binding.sendOtp.setEnabled(false);
         StringRequest postRequest = new StringRequest(Request.Method.POST, OTP_URL,

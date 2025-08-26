@@ -115,7 +115,7 @@ public class OtpVerify extends Fragment {
 
     private void verifyOtp(String email, String otp) {
         RequestQueue queue = Volley.newRequestQueue(getContext());
-        String VERIFY_URL = "https://buffel.xyz/blood_village/send_mail/verify_otp.php";
+        String VERIFY_URL = "https://bdinfowala.com/bdinfowala/api/send_mail/verify_otp.php";
 
         // ProgressBar দেখানো এবং বাটন নিষ্ক্রিয় করা
         binding.progressBar.setVisibility(View.VISIBLE);
@@ -174,7 +174,7 @@ public class OtpVerify extends Fragment {
 
 
     private void resendOtp(String email) {
-        String RESEND_URL = "https://buffel.xyz/blood_village/send_mail/resend_otp.php";
+        String RESEND_URL = "https://bdinfowala.com/bdinfowala/api/send_mail/resend_otp.php";
 
         RequestQueue queue = Volley.newRequestQueue(requireContext());
 
